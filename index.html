@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="letterdisplayed" style="font-size: 50px; color:green; text-align:center">Press a Letter</p>
+
+    <script>
+        const colorMap = {
+            'a': 'green',
+            'b': 'yellow',
+            'c': 'black',
+            'd': 'orange',
+            'e': 'pink',
+            'f': 'blue',
+            'g': 'grey',
+            'h': 'cyan',
+            'i': 'purple',
+            'j': 'magenta',
+            'k': 'brown',
+            'l': 'gray',
+            'm': 'beige',
+            'n': 'sky blue',
+            'o': 'violet',
+            'p': 'teal',
+            'q': 'navy',
+            'r': 'gold',
+            's': 'coral',
+            't': 'salmon',
+            'u': 'olive',
+            'v': 'crimson',
+            'w': 'sienna',
+            'x': 'lemon',
+            'y': 'slateblue',
+            'z': 'tan'
+                };
+                <!-- function to handle keydown events -->
+            function handlekeyPress(event) {
+                const letter = event.key.toLowerCase(); //getting the press key
+
+                //check if the pressed key is a letter and exits in the color map
+                if (colorMap[letter]) {
+                    const letterdisplayed = document.getElementById("letterdisplayed");
+                    letterdisplayed.textContent = letter.toUpperCase(); //show the letter
+                    letterdisplayed.style.color = colorMap[letter]; //change the color
+
+                }
+            }
+
+            //listen for keydown events on the document
+            document.addEventListener('keydown', handlekeyPress);
+    </script>
+</body>
+</html>
